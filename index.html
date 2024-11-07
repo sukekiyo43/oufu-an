@@ -25,7 +25,7 @@
 
 <body>
     <header class="header">
-        <h1 class="main-title"><img src="" alt="忍びの里 桜風庵タイトル"></h1>
+        <h1 class="main-title"><img src="./img/sakura-breeze-logo.png" alt="忍びの里 桜風庵タイトル"></h1>
 
         <div class="menu-box">
             <button class="menu-button" aria-label="メニューボタン">
@@ -33,12 +33,14 @@
                 <span class="menu-line2"></span>
                 <span class="menu-line3"></span>
             </button>
-            <nav class="nav-items">
-                <a class="nav-item" href="">ホーム</a>
-                <a class="nav-item" href="">メニュー</a>
-                <a class="nav-item" href="">店舗情報</a>
-                <a class="nav-item" href="">アクセス</a>
-                <a class="nav-item" href="">予約</a>
+            <nav class="nav-wrapp">
+                <ul class="nav-items">
+                    <li><a class="nav-item" href="">ホーム</a></li>
+                    <li><a class="nav-item" href="">メニュー</a></li>
+                    <li><a class="nav-item" href="">店舗情報</a></li>
+                    <li><a class="nav-item" href="">アクセス</a></li>
+                    <li><a class="nav-item" href="">予約</a></li>
+                </ul>
             </nav>
             <div class="action-buttons">
                 <div class="reserve-box">
@@ -54,9 +56,24 @@
                 </div>
             </div>
         </div>
+        <div class="slide-container">
+            <div class="slide-items">
+                <div class="slide-item"><img src="./img/mv1.jpg" alt="メインビジュアル1"></div>
+                <div class="slide-item"><img src="./img/mv2.jpg" alt="メインビジュアル2"></div>
+                <div class="slide-item"><img src="./img/mv3.jpg" alt="メインビジュアル3"></div>
+                <div class="slide-item"><img src="./img/mv4.jpg" alt="メインビジュアル4"></div>
+            </div>
+            <div class="slide-items-sp">
+                <div class="slide-item"><img src="./img/mv1-sp.jpg" alt="メインビジュアル1"></div>
+                <div class="slide-item"><img src="./img/mv2-sp.jpg" alt="メインビジュアル2"></div>
+                <div class="slide-item"><img src="./img/mv3-sp.jpg" alt="メインビジュアル3"></div>
+                <div class="slide-item"><img src="./img/mv4-sp.jpg" alt="メインビジュアル4"></div>
+            </div>
+        </div>
     </header>
 
     <main>
+        <button onclick="location.href=''" aria-label="トップへ戻るボタン"></button>
         <section class="hero-box">
             <div class="hero-head">
                 <p class="hero-text">
@@ -66,7 +83,7 @@
                         class="text-medium">和食体験</span><span class="text-small">を</span>
                 </p>
                 <div class="hero-img">
-                    <img src="" alt="料理の画像">
+                    <img src="./img/hero-img.png" loading="lazy" alt="料理の画像">
                 </div>
             </div>
             <div class="hero-explain">
@@ -105,7 +122,7 @@
                         <p class="menu-text">カラッと揚がった天ぷらの口当たりは、まさに日本料理の技が光る一品です。</p>
                     </div>
                     <div class="menu-img">
-                        <img src="" alt="天ぷらの画像">
+                        <img src="./img/tempura.jpg" loading="lazy" alt="天ぷらの画像">
                     </div>
                 </div>
                 <div class="menu-item">
@@ -116,7 +133,10 @@
                         <p class="menu-text">寿司ネタの切り方や、シャリの温度、握り加減など、細部にこだわる職人技が詰まったこの寿司は、まさに日本の伝統を体感できる贅沢なひとときです。</p>
                     </div>
                     <div class="menu-img">
-                        <img src="" alt="寿司の画像">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="./img/sushi-sp.jpg">
+                            <img src="./img/sushi.jpg" loading="lazy" alt="寿司の画像">
+                        </picture>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -127,7 +147,7 @@
                         <p class="menu-text">ひと口ごとに広がるタレの甘みと、口の中でとろけるような食感は、日本の伝統的な食文化を体験する最高の機会となるでしょう。</p>
                     </div>
                     <div class="menu-img">
-                        <img src="" alt="うな重の画像">
+                        <img src="./img/una-juu.jpg" loading="lazy" alt="うな重の画像">
                     </div>
                 </div>
                 <div class="menu-item">
@@ -139,7 +159,7 @@
                         <p class="menu-text">シンプルでありながら奥深い、日本の伝統的な麺料理として、軽食にも食事の締めにもぴったりの一品です。</p>
                     </div>
                     <div class="menu-img">
-                        <img src="" alt="お蕎麦の画像">
+                        <img src="./img/soba-noodles.jpg" loading="lazy" alt="お蕎麦の画像">
                     </div>
                 </div>
                 <div class="menu-item">
@@ -150,7 +170,7 @@
                         <p class="menu-text">料理ごとに繊細な味わいと美しい盛り付けをお楽しみいただきながら、日本の四季の移ろいをご堪能ください。</p>
                     </div>
                     <div class="menu-img">
-                        <img src="" alt="コース料理の画像">
+                        <img src="./img/course.jpg" loading="lazy" alt="コース料理の画像">
                     </div>
                 </div>
             </div>
@@ -163,7 +183,7 @@
                 <div class="info-item-wrap">
                     <div class="info-head">
                         <div class="info-img">
-                            <img src="" alt="忍びの里 桜風庵">
+                            <img src="./img/sakura-breeze-logo-horizontal.png" loading="lazy" alt="忍びの里 桜風庵">
                         </div>
                         <div class="info-tel-box">
                             <dl class="info-tel">
@@ -214,9 +234,27 @@
         </section>
     </main>
 
-
-
-
+    <footer class="footer">
+        <nav class="nav-wrapp">
+            <ul class="nav-items">
+                <li><a class="nav-item" href="">ホーム</a></li>
+                <li><a class="nav-item" href="">メニュー</a></li>
+                <li><a class="nav-item" href="">店舗情報</a></li>
+                <li><a class="nav-item" href="">アクセス</a></li>
+                <li><a class="nav-item" href="">予約</a></li>
+            </ul>
+            <ul class="nav-items-sp">
+                <li class="nav-item-bottom"><a href="">WEBで予約</a></li>
+                <li class="nav-item-bottom"><a href="">TEL</a></li>
+                <li class="nav-item-bottom"><a href="">MAP</a></li>
+                <li class="nav-item-bottom"><a href="">TOP</a></li>
+            </ul>
+        </nav>
+        <div class="footer-legal">
+            <small>&copy;2024 忍びの里　桜風庵</small>
+            <a href="">cookie情報等の取り扱いについて</a>
+        </div>
+    </footer>
 </body>
 
 </html>

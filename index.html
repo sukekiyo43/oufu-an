@@ -6,56 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- meta情報 -->
     <title>忍びの里 桜風庵</title>
-    <meta name="description" content="忍びの里 桜風庵で本物の和食体験を">
-    <meta name="keywords" content="">
+    <meta name="description"
+        content="忍びの里 桜風庵で本格的な和食を堪能してください。新鮮な素材を使った寿司や天ぷら、季節ごとの特別メニューをご用意。日本文化と美食を体験できるレストラン。海外からのお客様も大歓迎です。">
+    <meta name="keywords" content="和食,寿司,天ぷら,日本料理,桜風庵,忍者,レストラン,観光,日本文化">
     <!-- ogp -->
     <meta property="og:title" content="忍びの里 桜風庵公式ウェブサイト">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
     <meta property="og:site_name" content="忍びの里 桜風庵">
-    <meta property="og:description" content="忍びの里 桜風庵で本物の和食体験を">
+    <meta property="og:description"
+        content="忍びの里 桜風庵で本格的な和食を堪能してください。新鮮な素材を使った寿司や天ぷら、季節ごとの特別メニューをご用意。日本文化と美食を体験できるレストラン。海外からのお客様も大歓迎です。">
     <!-- ファビコン -->
     <link rel="icon" href="./img/favicon.ico">
     <!-- GoogleFonts -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
     <!-- css -->
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- js -->
+    <script src="./js/jquery-3.7.1.min.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
     <header class="header">
-        <h1 class="main-title"><img src="./img/sakura-breeze-logo.png" alt="忍びの里 桜風庵タイトル"></h1>
+        <div class="header-inner">
+            <h1 class="main-title"><img src="./img/sakura-breeze-logo.png" alt="忍びの里 桜風庵タイトル"></h1>
 
-        <div class="menu-box">
-            <button class="menu-button" aria-label="メニューボタン">
-                <span class="menu-line1"></span>
-                <span class="menu-line2"></span>
-                <span class="menu-line3"></span>
-            </button>
-            <nav class="nav-wrapp">
-                <ul class="nav-items">
-                    <li><a class="nav-item" href="">ホーム</a></li>
-                    <li><a class="nav-item" href="">メニュー</a></li>
-                    <li><a class="nav-item" href="">店舗情報</a></li>
-                    <li><a class="nav-item" href="">アクセス</a></li>
-                    <li><a class="nav-item" href="">予約</a></li>
-                </ul>
-            </nav>
-            <div class="action-buttons">
-                <div class="reserve-box">
-                    <dl class="reserve-tel">
-                        <dt class="reserve-text">ご予約・お問い合わせ</dt>
-                        <dd class="reserve-number">TEL:06-2254-8484</dd>
-                    </dl>
-                    <button class="reserve-button" onclick="location.href=''" aria-label="予約ページに移動">WEB予約はこちら</button>
-                </div>
-                <div class="language-buttons">
-                    <button onclick="location.href='chinese'" aria-label="中国語に切り替え">Chinese</button>
-                    <button onclick="location.href='english'" aria-label="英語に切り替え">English</button>
+            <div class="menu-box">
+                <button class="menu-button" aria-label="メニューボタン">
+                    <span class="menu-line1"></span>
+                    <span class="menu-line2"></span>
+                    <span class="menu-line3"></span>
+                </button>
+                <nav class="nav-wrap">
+                    <ul class="nav-items">
+                        <li><a class="nav-item" href="">ホーム</a></li>
+                        <li><a class="nav-item" href="">メニュー</a></li>
+                        <li><a class="nav-item" href="">店舗情報</a></li>
+                        <li><a class="nav-item" href="">アクセス</a></li>
+                        <li><a class="nav-item" href="">予約</a></li>
+                    </ul>
+                </nav>
+                <div class="action-buttons">
+                    <div class="reserve-box">
+                        <dl class="reserve-tel">
+                            <dt class="reserve-text">ご予約・お問い合わせ</dt>
+                            <dd class="reserve-number">TEL:06-2254-8484</dd>
+                        </dl>
+                        <button class="reserve-button" onclick="location.href=''" aria-label="予約ページに移動">
+                            <span class="button-inner">
+                                WEB予約はこちら
+                            </span>
+                        </button>
+                    </div>
+                    <div class="language-buttons">
+                        <button class="language-button" onclick="location.href='chinese'" aria-label="中国語に切り替え">
+                            Chinese
+                        </button>
+                        <button class="language-button" onclick="location.href='english'" aria-label="英語に切り替え">
+                            English
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="slide-container">
             <div class="slide-items">
                 <div class="slide-item"><img src="./img/mv1.jpg" alt="メインビジュアル1"></div>
@@ -64,24 +86,21 @@
                 <div class="slide-item"><img src="./img/mv4.jpg" alt="メインビジュアル4"></div>
             </div>
             <div class="slide-items-sp">
-                <div class="slide-item"><img src="./img/mv1-sp.jpg" alt="メインビジュアル1"></div>
-                <div class="slide-item"><img src="./img/mv2-sp.jpg" alt="メインビジュアル2"></div>
-                <div class="slide-item"><img src="./img/mv3-sp.jpg" alt="メインビジュアル3"></div>
-                <div class="slide-item"><img src="./img/mv4-sp.jpg" alt="メインビジュアル4"></div>
+                <div class="slide-item"><img src="./img/mv1-sp.jpg" alt="メインビジュアルスマホサイズ1"></div>
+                <div class="slide-item"><img src="./img/mv2-sp.jpg" alt="メインビジュアルスマホサイズ2"></div>
+                <div class="slide-item"><img src="./img/mv3-sp.jpg" alt="メインビジュアルスマホサイズ3"></div>
+                <div class="slide-item"><img src="./img/mv4-sp.jpg" alt="メインビジュアルスマホサイズ4"></div>
             </div>
         </div>
     </header>
 
     <main>
-        <button onclick="location.href=''" aria-label="トップへ戻るボタン"></button>
+        <button class="top-button" onclick="location.href=''" aria-label="トップへ戻るボタン"></button>
         <section class="hero-box">
             <div class="hero-head">
-                <p class="hero-text">
-                    <span class="text-small">忍びの里</span><span class="text-large">桜風庵</span><span
-                        class="text-small">で</span><br>
-                    <span class="text-medium">本物</span><span class="text-small">の</span><span
-                        class="text-medium">和食体験</span><span class="text-small">を</span>
-                </p>
+                <div class="hero-text">
+                    <img src="./img/hero-text-ja.svg" alt="本物の和食体験を忍びの里桜風庵で">
+                </div>
                 <div class="hero-img">
                     <img src="./img/hero-img.png" loading="lazy" alt="料理の画像">
                 </div>

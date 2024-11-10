@@ -1,12 +1,131 @@
 @charset "UTF-8";
 
+/*-------------------------------------------
+ページ共通の設定
+-------------------------------------------*/
 body  {
   font-family: "Shippori Mincho", serif;
   font-weight: 500;
-  /* font-style: normal; */
   font-size: 16px;
   color: #3A3A3A;
 }
+
+/* ナビゲーション */
+.nav-wrap {
+    max-width: 712px;
+    margin: auto;
+}
+
+.nav-wrap.header-nav {
+    position: absolute;
+    bottom: 33px;
+    left: 0;
+    right: 0;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    gap:min(5.7vw,110px);
+}
+
+.nav-item {
+    color: #FFFFFF;
+}
+
+/* 予約ボタン */
+.reserve-button {
+    position: relative;
+    display: block;
+    width: 252px;
+    height: 52px;
+    margin: 0 auto;
+    padding: 3px;
+    border: solid 1px #3A3A3A;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.reserve-button.vertical {
+    width: 52px;
+    height: 252px;
+    padding: 5px;
+}
+
+.reserve-button:hover {
+    background-color: #303231;
+}
+
+.reserve-button::before,
+.reserve-button::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    transform: rotate(135deg);
+    border-top: solid 1px #3A3A3A;
+    border-left: solid 1px #3A3A3A;
+    transition: all 0.3s;
+}
+
+.reserve-button::before {
+    right: 37px;
+}
+
+.reserve-button::after {
+    right: 32px;
+}
+
+.reserve-button.vertical::before {
+    top: auto;
+    left: 0;
+    right: 2px;
+    bottom: 22px;
+}
+
+.reserve-button.vertical::after {
+    top: auto;
+    left: 0;
+    right: 12px;
+    bottom: 22px;
+}
+
+.reserve-button:hover::after,
+.reserve-button:hover::before {
+    border-top: solid 1px #FFFFFF;
+    border-left: solid 1px #FFFFFF;
+}
+
+.reserve-button-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: solid 1px #3A3A3A;
+    font-weight: bold;
+    line-height: 1.3;
+    color: #3A3A3A;
+    transition: all 0.3s;
+    letter-spacing: 2px;
+}
+
+.vertical .reserve-button-inner {
+    letter-spacing: 4.8px;
+    padding-top: 14px;
+    justify-content: initial;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.reserve-button:hover .reserve-button-inner {
+    color: #FFFFFF;
+    border: solid 1px #FFFFFF;
+}
+
 
 /*-------------------------------------------
 header
@@ -16,7 +135,6 @@ header
     height: 900px;
     overflow: hidden;
     margin: 0 auto;
-    /* background-color: gray; */
 }
 
 .header-inner {
@@ -35,26 +153,6 @@ header
 
 .menu-button {
     display: none;
-}
-
-.nav-wrap {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 712px;
-    padding-bottom: 33px;
-}
-
-.nav-items {
-    display: flex;
-    justify-content: center;
-    gap:min(5.7vw,110px);
-}
-
-.nav-item {
-    color: #FFFFFF;
 }
 
 .action-buttons {
@@ -111,76 +209,12 @@ header
     transform: rotate(135deg);
     border-top: solid 1px #3A3A3A;
     border-left: solid 1px #3A3A3A;
+    transition: all 0.3s;
 }
 
 .language-button:hover::before {
     border-top: solid 1px #FFFFFF;
     border-left: solid 1px #FFFFFF;
-}
-
-.reserve-button {
-    position: relative;
-    width: 52px;
-    height: 252px;
-    border: solid 1px #3A3A3A;
-    line-height: 1.3;
-    letter-spacing: 0.1em;
-    background-color: rgba(255,255,255,0.9);
-    padding: 5px;
-}
-
-.reserve-button:hover {
-    background-color: #303231;
-}
-
-.reserve-button::before,
-.reserve-button::after {
-    position: absolute;
-    content: '';
-    bottom: 0;
-    margin: auto;
-    width: 12px;
-    height: 12px;
-    transform: rotate(135deg);
-    border-top: solid 1px #3A3A3A;
-    border-left: solid 1px #3A3A3A;
-}
-
-.reserve-button::before {
-    left: 0;
-    right: 2px;
-    bottom: 22px;
-}
-
-.reserve-button::after {
-    left: 0;
-    right: 12px;
-    bottom: 22px;
-}
-
-.reserve-button:hover::after,
-.reserve-button:hover::before {
-    border-top: solid 1px #FFFFFF;
-    border-left: solid 1px #FFFFFF;
-}
-
-.button-inner {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    border: solid 1px #3A3A3A;
-    padding-top: 14px;
-    letter-spacing: 4.8px;
-    font-weight: bold;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-}
-
-.reserve-button:hover .button-inner {
-    color: #FFFFFF;
-    border: solid 1px #FFFFFF;
 }
 
 .slide-container {
@@ -237,7 +271,6 @@ hero-box
     width: 67px;
     height: 67px;
     background-color: #FFFFFF;
-
     opacity: 0;
 }
 
@@ -390,6 +423,7 @@ link-box
     border-radius: 50%;
     z-index: -1;
     background-size: 100%;
+    transition: all 0.3s;
 }
 
 .link-item.menu::after {
@@ -538,6 +572,7 @@ menu-highlight
     bottom: 0;
     margin: auto;
     right: 45px;
+    transition: all 0.3s;
 }
 
 .menu-detail-link:hover::after {
@@ -550,16 +585,10 @@ restaurant-info
 -------------------------------------------*/
 .restaurant-info {
     padding-top: 67px;
-    padding-inline: 20px;
-    /* background-image: url(../img/flower-diamond-bg.jpg); */
+    background-image: url(../img/flower-diamond-bg.jpg);
     background-size: 1920px 650px;
     background-repeat: repeat;
-    background-color: gray;
     color: #FFFFFF;
-}
-
-.section-title.shuriken-white {
-    /* color: #FFFFFF; */
 }
 
 .shuriken-white::before,
@@ -585,16 +614,20 @@ restaurant-info
 
 .info-item-wrap {
     display: flex;
-    max-width: 1005px;
+    max-width: 1045px;
     margin: 0 auto;
+    margin-bottom: 39px;
+    padding-inline: 20px;
 }
 
 .info-head {
+    width: 50%;
     max-width: 440px;
 }
 
 .info-img {
     margin-bottom: 32px;
+    opacity: 0.8;
 }
 
 .info-tel {
@@ -603,6 +636,7 @@ restaurant-info
     text-align: center;
     border-top: solid 1px #FFFFFF;
     border-bottom: solid 1px #FFFFFF;
+    margin-bottom: 32px;
 }
 
 .tel-text {
@@ -612,13 +646,76 @@ restaurant-info
 
 .tel-number {
     font-size: 48px;
+    font-size: min(4.42vw,48px);
     letter-spacing: 3.5px;
     white-space: nowrap;
-    /* font-weight: bold; */
 }
 
+.info-items {
+    width: 45%;
+    max-width: 452px;
+    margin-left: auto;
+}
 
+.info-item {
+    display: flex;
+    margin-bottom: 39px;
+    width: 100%;
+}
 
+.info-header {
+    width: 28%;
+    max-width: 126px;
+    min-width: 90px;
+    font-weight: normal;
+}
+
+.info-data {
+    width: 235px;
+}
+
+.google-map {
+    width: 100%;
+    height: 500px;
+    vertical-align: bottom;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+.footer {
+    background-image: url(../img/flower-diamond-bg.jpg);
+    background-size: 1920px 650px;
+    background-repeat: repeat;
+    color: #FFFFFF;
+    padding-top: 54px;
+    padding-bottom: 16px;
+}
+
+.footer .nav-wrap {
+    /* position: static; */
+    /* padding: 0; */
+}
+
+.nav-items-sp {
+    display: none;
+}
+
+.footer-legal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 54px;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.policy-link {
+    font-size: 14px;
+}
 
 /*-------------------------------------------
 スマートフォン

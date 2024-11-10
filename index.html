@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <!-- meta情報 -->
     <title>忍びの里 桜風庵</title>
     <meta name="description"
@@ -45,7 +46,7 @@
                     <span class="menu-line2"></span>
                     <span class="menu-line3"></span>
                 </button>
-                <nav class="nav-wrap">
+                <nav class="nav-wrap header-nav">
                     <ul class="nav-items">
                         <li><a class="nav-item" href="">ホーム</a></li>
                         <li><a class="nav-item" href="">メニュー</a></li>
@@ -60,8 +61,8 @@
                             <dt class="reserve-text">ご予約・お問い合わせ</dt>
                             <dd class="reserve-number">TEL:06-2254-8484</dd>
                         </dl>
-                        <button class="reserve-button" onclick="location.href=''" aria-label="予約ページに移動">
-                            <span class="button-inner">
+                        <button class="reserve-button vertical" onclick="location.href=''" aria-label="予約ページに移動">
+                            <span class="reserve-button-inner">
                                 WEB予約はこちら
                             </span>
                         </button>
@@ -204,64 +205,59 @@
 
         <section class="restaurant-info">
             <h2 class="section-title shuriken-white">店舗情報</h2>
-            <div class="info-main">
-                <div class="info-item-wrap">
-                    <div class="info-head">
-                        <div class="info-img">
-                            <img src="./img/sakura-breeze-logo-horizontal.png" loading="lazy" alt="忍びの里 桜風庵">
-                        </div>
-                        <div class="info-tel-box">
-                            <dl class="info-tel">
-                                <dt class="tel-text">ご予約・お問い合わせ</dt>
-                                <dd class="tel-number">TEL:06-2254-8484</dd>
-                            </dl>
-                            <button class="reserve-button" onclick="location.href=''" aria-label="予約ページに移動">
-                                WEB予約はこちら
-                            </button>
-                        </div>
+            <div class="info-item-wrap">
+                <div class="info-head">
+                    <div class="info-img">
+                        <img src="./img/sakura-breeze-logo-horizontal.png" loading="lazy" alt="忍びの里 桜風庵">
                     </div>
-                    <table class="info-container">
-                        <tbody class="info-items">
-                            <tr class="info-item">
-                                <th class="info-header">店名</th>
-                                <td class="info-data">忍びの里　桜風庵</td>
-                            </tr>
-                            <tr class="info-item">
-                                <th class="info-header">住所</th>
-                                <td class="info-data">大阪府大阪市忍者町1-12-34</td>
-                            </tr>
-                            <tr class="info-item">
-                                <th class="info-header">営業時間</th>
-                                <td class="info-data">月曜日~金曜日 17:00~23:00</td>
-                            </tr>
-                            <tr class="info-item">
-                                <th class="info-header">電話番号</th>
-                                <td class="info-data">06-2254-8484</td>
-                            </tr>
-                            <tr class="info-item">
-                                <th class="info-header">最寄駅</th>
-                                <td class="info-data">新大阪駅</td>
-                            </tr>
-                            <tr class="info-item">
-                                <th class="info-header">メール</th>
-                                <td class="info-data">shinobi_sato@mail.com</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="info-tel-box">
+                        <dl class="info-tel">
+                            <dt class="tel-text">ご予約・お問い合わせ</dt>
+                            <dd class="tel-number">TEL:06-2254-8484</dd>
+                        </dl>
+                        <button class="reserve-button" onclick="location.href=''" aria-label="予約ページに移動">
+                            <span class="reserve-button-inner">WEB予約はこちら</span>
+                        </button>
+                    </div>
                 </div>
+                <dl class="info-items">
+                    <div class="info-item">
+                        <dt class="info-header">店名</dt>
+                        <dd class="info-data">忍びの里　桜風庵</dd>
+                    </div>
+                    <div class="info-item">
+                        <dt class="info-header">住所</dt>
+                        <dd class="info-data">大阪府大阪市忍者町1-12-34</dd>
+                    </div>
+                    <div class="info-item">
+                        <dt class="info-header">営業時間</dt>
+                        <dd class="info-data">月曜日~金曜日 17:00~23:00</dd>
+                    </div>
+                    <div class="info-item">
+                        <dt class="info-header">電話番号</dt>
+                        <dd class="info-data">06-2254-8484</dd>
+                    </div>
+                    <div class="info-item">
+                        <dt class="info-header">最寄駅</dt>
+                        <dd class="info-data">新大阪駅</dd>
+                    </div>
+                    <div class="info-item">
+                        <dt class="info-header">メール</dt>
+                        <dd class="info-data">shinobi_sato@mail.com</dd>
+                    </div>
+                </dl>
             </div>
             <div class="info-map">
-                <iframe
+                <iframe class="google-map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27803.20861393573!2d135.45806151598882!3d34.696556766019924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e76dc210b411%3A0x2ab2a7ae90075515!2z44Kw44Op44Oz44OV44Ot44Oz44OI5aSn6ZiqIOOCv-ODr-ODvEI!5e0!3m2!1sja!2sjp!4v1730908851811!5m2!1sja!2sjp"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <nav class="nav-wrapp">
+        <nav class="nav-wrap">
             <ul class="nav-items">
                 <li><a class="nav-item" href="">ホーム</a></li>
                 <li><a class="nav-item" href="">メニュー</a></li>
@@ -277,8 +273,8 @@
             </ul>
         </nav>
         <div class="footer-legal">
-            <small>&copy;2024 忍びの里　桜風庵</small>
-            <a href="">cookie情報等の取り扱いについて</a>
+            <small class="copyright">&copy;2024 忍びの里 桜風庵</small>
+            <a class="policy-link" href="">cookie情報等の取り扱いについて</a>
         </div>
     </footer>
 </body>

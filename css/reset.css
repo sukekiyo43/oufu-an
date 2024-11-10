@@ -19,7 +19,6 @@ html {
 ::after {
   background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
   box-sizing: inherit;
-  transition: all 0.3s;
 }
 
 ::before,

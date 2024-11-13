@@ -303,7 +303,7 @@ header
 }
 
 /*-------------------------------------------
-hero-box
+main
 -------------------------------------------*/
 
 .main {
@@ -314,7 +314,8 @@ hero-box
     overflow: hidden;
 }
 
-.top-button-box {
+.button-box {
+    visibility: hidden;
     position: fixed;
     max-width: 1864px;
     bottom: 33px;
@@ -326,6 +327,7 @@ hero-box
 }
 
 .top-button {
+    visibility: visible;
     position: relative;
     display: block;
     margin-left: auto;
@@ -362,6 +364,15 @@ hero-box
 .top-button::after {
     bottom: 21px;
 }
+
+.top-button-text {
+    display: none;
+}
+
+
+/*-------------------------------------------
+hero-box
+-------------------------------------------*/
 
 .hero-box {
     display: flex;
@@ -419,7 +430,7 @@ hero-box
     height: 100%;
     background-size: cover;
     background-position: bottom;
-    background-image: url(../img/hero-bg.jpg);
+    background-image: url(../img/hero-bg-pc.jpg);
     top: 0;
     left: 0;
     z-index: -1;
@@ -518,7 +529,6 @@ menu-highlight
     margin: 0 auto;
     padding: 66px 20px 80px 20px;
 }
-
 
 .menu-items {
     margin-bottom: 40px;
@@ -634,8 +644,8 @@ restaurant-info
     display: flex;
     max-width: 1045px;
     margin: 0 auto;
-    margin-bottom: 39px;
     padding-inline: 20px;
+    padding-bottom: 39px;
 }
 
 .info-head {
@@ -663,7 +673,6 @@ restaurant-info
 }
 
 .tel-number {
-    font-size: 48px;
     font-size: min(4.42vw,48px);
     letter-spacing: 3.5px;
     white-space: nowrap;
@@ -677,8 +686,11 @@ restaurant-info
 
 .info-item {
     display: flex;
-    margin-bottom: 39px;
     width: 100%;
+}
+
+.info-item:not(.info-item:last-child) {
+    margin-bottom: 39px;
 }
 
 .info-header {
@@ -708,10 +720,6 @@ footer
     color: #FFFFFF;
     padding-top: 54px;
     padding-bottom: 16px;
-}
-
-.nav-items-sp {
-    display: none;
 }
 
 .footer-legal {
@@ -763,6 +771,7 @@ footer
         padding: 3px;
     }
 
+    .reserve-button::before,
     .reserve-button.vertical::before {
         top: 0;
         left: auto;
@@ -770,6 +779,7 @@ footer
         bottom: 0;
     }
 
+    .reserve-button::after,
     .reserve-button.vertical::after {
         top: 0;
         left: auto;
@@ -777,6 +787,7 @@ footer
         bottom: 0;
     }
 
+    .reserve-button-inner,
     .vertical .reserve-button-inner {
         letter-spacing: 0;
         padding-top: 0;
@@ -785,6 +796,29 @@ footer
         -ms-writing-mode: initial;
         writing-mode: initial;
         text-orientation: initial;
+    }
+
+    /* セクションタイトル */
+    .section-title {
+        font-size: 28px;
+        letter-spacing: 2.8px;
+        margin: 0 auto 30px;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        width: 48px;
+        height: 48px;
+        background-size: cover;
+        top: 3px;
+    }
+
+    .section-title::before {
+        left: -55px;
+    }
+
+    .section-title::after {
+        right: -55px;
     }
 
 /*-------------------------------------------
@@ -925,7 +959,7 @@ header
         flex-direction: row;
         width: fit-content;
         padding-left: 0;
-        margin: 165px auto 0;
+        margin: 163px auto 0;
         gap: 27px;
         transition: all 0.3s;
     }
@@ -968,16 +1002,265 @@ header
     }
 
 /*-------------------------------------------
+main
+-------------------------------------------*/
+    .button-box {
+        visibility: visible;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        bottom: 0;
+        height: 50px;
+        padding-inline: 14px;
+        padding-bottom: 4px;
+        background-color: #3A3A3A;
+        z-index: 100;
+    }
+    
+    .top-button {
+        all: unset;
+        /* display: none; */
+    }
+    
+    .top-button-text {
+        display: block;
+    }
+    
+    .navi-button {
+        width: fit-content;
+        color: #FFFFFF;
+        font-size: 12px;
+        text-align: center;
+    }
+
+
+/*-------------------------------------------
 hero-box
 -------------------------------------------*/
 
-.hero-text {
-    position: static;
-    margin: auto;
-    width: min(27.7vw,284px);
-    min-width: 240px;
-}
+    .hero-box {
+        flex-direction: column;
+    }
 
+    .hero-head {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0 13px 40px 13px;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    .hero-text {
+        display: flex;
+        justify-content: center;
+        position: static;
+        margin: 0 auto 40px;
+        width: 100%;
+        min-width: 100%;
+        padding-top: 40px;
+    }
+    
+    .hero-text img {
+        max-width: 150px;
+        width: 24.36vw;
+    }
+    
+    .hero-explain {
+        width: 100%;
+        -ms-writing-mode: initial;
+        writing-mode: initial;
+        text-orientation: initial;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../img/hero-bg-sp.jpg);
+        padding: 37px 20px 37px 26px;
+    }
+
+    .hero-explain-inner {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .hero-explain::after {
+        display: none;
+    }
+
+    .explain-title {
+        font-size: 28px;
+        letter-spacing: 2.8px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .explain-text {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 14px;
+        letter-spacing: 0.7px;
+        line-height: 1.1;
+        padding-top: 16px;
+    }
+
+    .explain-text:nth-of-type(1) {
+        margin-left: 0;
+    }
+
+    .br-pc {
+        display: none;
+    }
+
+/*-------------------------------------------
+link-box
+-------------------------------------------*/
+    .link-box {
+        display: none;
+    }
+
+/*-------------------------------------------
+menu-highlight
+-------------------------------------------*/
+    .menu-highlight {
+        max-width: 600px;
+        padding: 43px 24px 40px 24px;
+    }
+
+    .menu-items {
+        margin-bottom: 30px;
+    }
+
+    .menu-item:nth-child(n+2) {
+        margin-top: 38px;
+    }
+
+    .left-shift,
+    .right-shift,
+    .center-shift {
+        flex-direction: column-reverse;
+    }
+
+    .menu-img img:not(.sushi img,.course img) {
+        aspect-ratio: 341/217;
+        object-fit: cover;
+    }
+
+    .menu-text-box {
+        padding-top: 16px;
+        margin: 0 auto;
+    }
+    
+    .menu-title {
+        font-size: 21px;
+        margin-bottom: 17px;
+        text-align: center;
+    }
+    
+    .center-shift .menu-title {
+        margin-top: 0;
+    }
+    
+    .center-shift .menu-text-box {
+        max-width: 440px;
+    }
+
+    .menu-text {
+        font-size: 14px;
+        letter-spacing: 0.7px;
+        line-height: 1.1;
+    }
+
+    .menu-text:nth-child(n+2) {
+        margin-top: 14px;
+    }
+
+    .menu-detail-link {
+        width: 100%;
+        max-width: 340px;
+        padding-right: 22px;
+    }
+
+    .menu-detail-link::after {
+        right: 49px;
+    }
+
+/*-------------------------------------------
+restaurant-info
+-------------------------------------------*/
+    .restaurant-info {
+        padding-top: 43px;
+    }
+
+    .info-item-wrap {
+        display: block;
+        max-width: 500px;
+        padding-inline: 24px;
+        padding-bottom: 41px;
+    }
+
+    .info-head {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 39px;
+    }
+
+    .info-img {
+        margin-bottom: 23px;
+    }
+
+    .info-tel {
+        padding-top: 15px;
+        padding-bottom: 8px;
+        margin-bottom: 14px;
+    }
+    
+    .tel-text {
+        font-size: 14px;   
+        margin-bottom: 17px;
+    }
+
+    .tel-number {
+        font-size: 28px;
+        letter-spacing: 2.3px;
+    }
+
+    .info-items {
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        font-size: 14px;
+        padding-left: 35px;
+        padding-right: 15px;
+    }
+
+    .info-item:not(.info-item:last-child) {
+        margin-bottom: 16px;
+    }
+
+    .info-header {
+        max-width: 94px;
+        min-width: 78px;
+        width: 39%;
+    }
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+
+    .footer {
+        padding-top: 24px;
+        padding-bottom: 89px;
+    }
+
+    .footer-nav {
+        display: none;
+    }
+
+    .footer-legal {
+        margin-top: 0;
+    }
 
 
 

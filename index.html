@@ -99,13 +99,20 @@
     </header>
 
     <main class="main">
-        <div class="top-button-box">
-            <button class="top-button" aria-label="トップへ戻るボタン"></button>
+        <div class="button-box">
+            <button class="navi-button" aria-label="WEBで予約ページへ">WEBで予約</button>
+            <button class="navi-button" aria-label="電話をかけるボタン">TEL</button>
+            <button class="navi-button" aria-label="地図のボタン">MAP</button>
+            <button class="navi-button top-button" aria-label="トップへ戻るボタン"><span
+                    class="top-button-text">TOP</span></button>
         </div>
         <section class="hero-box">
             <div class="hero-head">
                 <div class="hero-text">
-                    <img src="./img/hero-text-ja.svg" alt="本物の和食体験を忍びの里桜風庵で">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="./img/hero-text-ja-sp.svg">
+                        <img src="./img/hero-text-ja-pc.svg" alt="本物の和食体験を忍びの里桜風庵で">
+                    </picture>
                 </div>
                 <div class="hero-img fade">
                     <img src="./img/hero-img.png" loading="lazy" alt="料理の画像">
@@ -114,19 +121,25 @@
             <div class="hero-explain">
                 <div class="hero-explain-inner">
                     <h2 class="explain-title">和食の魅力</h2>
-                    <p class="explain-text">
-                        四季折々の食材を活かし、<br>
-                        味覚だけでなく視覚でも楽しめるのが和食の特徴です。<br>
-                        寿司や天ぷら、うなぎなど、伝統的な料理から季節限定の一品まで、<br>
-                        多彩な味わいをご堪能いただけます。<br>
-                        丁寧な調理と美しい盛り付けで、日本ならではの繊細な味わいを<br>
-                        お届けします。
-                    </p>
-                    <p class="explain-text">
-                        隠れ家のような空間で、本格的な和食を味わってください。<br>
-                        料理だけでなく、器やお店の雰囲気にもこだわった特別な和の体験を、<br>
-                        心ゆくまでお楽しみいただけます。
-                    </p>
+                    <div class="explain-text">
+                        <p>
+                            四季折々の食材を活かし、<br class="br-pc">味覚だけでなく視覚でも楽しめるのが和食の特徴です。
+                        </p>
+                        <p>
+                            寿司や天ぷら、うなぎなど、伝統的な料理から季節限定の一品まで、<br class="br-pc">多彩な味わいをご堪能いただけます。
+                        </p>
+                        <p>
+                            丁寧な調理と美しい盛り付けで、日本ならではの繊細な味わいを<br class="br-pc">お届けします。
+                        </p>
+                    </div>
+                    <div class="explain-text">
+                        <p>
+                            隠れ家のような空間で、本格的な和食を味わってください。
+                        </p>
+                        <p>
+                            料理だけでなく、器やお店の雰囲気にもこだわった特別な和の体験を、<br class="br-pc">心ゆくまでお楽しみいただけます。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -161,7 +174,7 @@
                         <p class="menu-text">とろけるようなまぐろ、ぷりぷりのエビ、繊細な風味の白身魚など、海の幸が持つ独自の味わいをシャリとの絶妙なバランスで楽しむことができます。</p>
                         <p class="menu-text">寿司ネタの切り方や、シャリの温度、握り加減など、細部にこだわる職人技が詰まったこの寿司は、まさに日本の伝統を体感できる贅沢なひとときです。</p>
                     </div>
-                    <div class="menu-img fade">
+                    <div class="menu-img sushi fade">
                         <picture>
                             <source media="(max-width: 767px)" srcset="./img/sushi-sp.jpg">
                             <img src="./img/sushi.jpg" loading="lazy" alt="寿司の画像">
@@ -198,7 +211,7 @@
                         <p class="menu-text">季節の前菜から始まり、お造り、煮物、焼き物、揚げ物、ご飯ものまで、和食の奥深さと美しさを一皿一皿で表現しています。</p>
                         <p class="menu-text">料理ごとに繊細な味わいと美しい盛り付けをお楽しみいただきながら、日本の四季の移ろいをご堪能ください。</p>
                     </div>
-                    <div class="menu-img fade">
+                    <div class="menu-img course fade">
                         <img src="./img/course.jpg" loading="lazy" alt="コース料理の画像">
                     </div>
                 </div>
@@ -260,7 +273,7 @@
     </main>
 
     <footer class="footer">
-        <nav class="nav-wrap">
+        <nav class="nav-wrap footer-nav">
             <ul class="nav-items">
                 <li><a class="nav-item" href="">ホーム</a></li>
                 <li><a class="nav-item" href="">メニュー</a></li>
@@ -268,15 +281,9 @@
                 <li><a class="nav-item" href="">アクセス</a></li>
                 <li><a class="nav-item" href="">予約</a></li>
             </ul>
-            <ul class="nav-items-sp">
-                <li class="nav-item-bottom"><a href="">WEBで予約</a></li>
-                <li class="nav-item-bottom"><a href="">TEL</a></li>
-                <li class="nav-item-bottom"><a href="">MAP</a></li>
-                <li class="nav-item-bottom"><a href="">TOP</a></li>
-            </ul>
         </nav>
         <div class="footer-legal">
-            <small class="copyright">&copy;2024 忍びの里 桜風庵</small>
+            <small class="copyright">&copy;2024 忍びの里　桜風庵</small>
             <a class="policy-link" href="">cookie情報等の取り扱いについて</a>
         </div>
     </footer>

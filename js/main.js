@@ -1,7 +1,19 @@
 $(document).ready(function () {
-    // MVスライドの設定
+    // ページアクセス後3秒後に1回だけ初期化
+    setTimeout(function() {
+        initializeSlick();
+        $('.op-box').css({
+            'opacity': '0',
+            'pointer-events': 'none'
+        });
+        $('body').removeClass('body-hidden');
+    }, 3000);
+    
+    // ウィンドウサイズ変更時にも初期化
+    $(window).resize(initializeSlick);
+
     function initializeSlick() {
-        if ($(window).width() >= 768) {
+        if (window.innerWidth >= 768) {
             if (!$('.slide-items').hasClass('slick-initialized')) {
                 $('.slide-items').slick({
                     autoplay: true,
@@ -30,25 +42,46 @@ $(document).ready(function () {
         }
     }
 
-    initializeSlick();
-    $(window).resize(initializeSlick);
-
+    $(document).ready(function () {
     // スクロールで要素をフェードインさせる設定
-    $(".fade, .fade-right, .fade-left").on("inview", function () {
-        $(this).addClass("fade-in");
+        $(".fade, .fade-right, .fade-left").on("inview", function (event, isInView) {
+            if (isInView) {
+                $(this).addClass("fade-in");
+            } else {
+                $(this).removeClass("fade-in");
+            }
+        });
+
+        $(window).on('scroll', function() {
+            let scrollPosition = $(window).scrollTop();
+            let windowWidth = window.innerWidth;
+
+            if (scrollPosition > 600) {
+                if (windowWidth >= 768) {
+                    $('.top-button').addClass('show-element');
+                    $('.control-box').removeClass('show-element').attr("aria-hidden", "false");
+                } else {
+                    $('.control-box').addClass('show-element').attr("aria-hidden", "false");
+                    $('.top-button').removeClass('show-element');
+                }
+            } else {
+                $('.top-button').removeClass('show-element');
+                $('.control-box').removeClass('show-element').attr("aria-hidden", "true");
+            }
+        });
+
+        $(window).on('resize', function() {
+            let windowWidth = window.innerWidth;
+
+            if (windowWidth >= 768) {
+                $('.button-box').removeClass('show-element');
+            } else {
+                $('.top-button').removeClass('show-element');
+            }
+        });
     });
 
     // トップに戻るボタンの設定
-    $(window).on('scroll', function() {
-        let scrollPosition = $(window).scrollTop();
-
-        if (scrollPosition > 600) {
-            $('.top-button').addClass('top-button-visible');
-        } else {
-            $('.top-button').removeClass('top-button-visible');
-        }
-    });
-
     $('.top-button').on('click', function(event) {
         event.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, 600);
@@ -56,16 +89,14 @@ $(document).ready(function () {
 
     // ハンバーガーメニュー開閉の設定
     $('.menu-button').on('click', function () {
-        $('.menu-box').toggleClass('open');
-        $('body').toggleClass('open');
+        $('.menu-box,.body-base').toggleClass('open');
     });
 
     let resizeTimer;
 
     function checkWidth() {
-        if ($(window).outerWidth(true) >= 768) {
-            $('.menu-box').removeClass('open');
-            $('body').removeClass('open');
+        if (window.innerWidth >= 768) {
+            $('.menu-box,.body-base').removeClass('open');
         }
     }
 
@@ -75,5 +106,4 @@ $(document).ready(function () {
     });
 
     $(window).on('load', checkWidth);
-
 });

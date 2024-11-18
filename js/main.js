@@ -47,8 +47,6 @@ $(document).ready(function () {
         $(".fade, .fade-right, .fade-left").on("inview", function (event, isInView) {
             if (isInView) {
                 $(this).addClass("fade-in");
-            } else {
-                $(this).removeClass("fade-in");
             }
         });
 

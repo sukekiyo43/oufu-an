@@ -1154,6 +1154,7 @@ hero-box
 -------------------------------------------*/
 
     .hero-box {
+        padding-inline: 0;
         flex-direction: column;
     }
 
@@ -1171,15 +1172,18 @@ hero-box
         display: flex;
         justify-content: center;
         position: static;
-        margin: 0 auto 40px;
+        margin: 0 auto 30px;
         width: 100%;
         min-width: 100%;
-        padding-top: 40px;
+        padding-top: 29px;
+        aspect-ratio: initial;
+        max-height: 100%;
+        height: auto;
     }
     
     .hero-text img {
-        max-width: 150px;
-        width: 24.36vw;
+        width: 29.2vw;
+        width: min(29.2vw,180px);
     }
     
     .hero-explain {
@@ -1187,7 +1191,7 @@ hero-box
         background-size: cover;
         background-position: center;
         background-image: url(../img/hero-bg-sp.jpg);
-
+        padding: 37px 20px 37px 26px;
     }
 
     .hero-explain-inner {

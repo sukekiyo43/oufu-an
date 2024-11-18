@@ -1191,7 +1191,6 @@ hero-box
         background-size: cover;
         background-position: center;
         background-image: url(../img/hero-bg-sp.jpg);
-        padding: 37px 20px 37px 26px;
     }
 
     .hero-explain-inner {

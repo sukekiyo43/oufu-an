@@ -60,6 +60,7 @@ hero-box
     }
 
     .hero-explain {
+        padding: 37px 20px 37px 26px;
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
         text-orientation: mixed;

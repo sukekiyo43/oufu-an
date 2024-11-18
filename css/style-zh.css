@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*-------------------------------------------
+中国語ページの設定
+-------------------------------------------*/
+
+/*-------------------------------------------
+hero-box
+-------------------------------------------*/
+
+.hero-explain {
+    padding-left: 3.72%;
+}
+
+.explain-title {
+    letter-spacing: 3px;
+}
+
+.explain-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 12px;
+    letter-spacing: 1.65px;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 767px) {
+
+/*-------------------------------------------
+ページ共通の設定
+-------------------------------------------*/
+
+}

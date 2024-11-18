@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/*-------------------------------------------
+日本語ページの設定
+-------------------------------------------*/
+/*-------------------------------------------
+hero-box
+-------------------------------------------*/
+
+.hero-box {
+    padding-inline: 0;
+}
+
+.hero-head {
+    padding: 2.2% 0 24px 8px;
+}
+
+.hero-explain {
+    padding-top: 46px;
+    padding-bottom: 13px;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+}
+
+.hero-explain-inner {
+    display: flex;
+    flex-direction: column;
+    width: 67%;
+    justify-content: flex-end;
+    max-width: 582px;
+}
+
+.explain-title {
+    margin-left: 18px;
+    letter-spacing: 10px;
+}
+
+.explain-text {
+    padding-top: 33px;
+    letter-spacing: 3px;
+    line-height: 2;
+}
+
+.explain-text:nth-of-type(1) {
+    margin-left: 16px;
+}
+
+/*-------------------------------------------
+スマートフォン
+-------------------------------------------*/
+
+@media screen and (max-width: 767px) {
+
+/*-------------------------------------------
+hero-box
+-------------------------------------------*/
+
+    .hero-explain {
+        -ms-writing-mode: horizontal-tb;
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+        white-space: normal;
+        padding: 37px 20px 37px 26px;
+    }
+
+    .hero-explain-inner {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .explain-text:nth-of-type(1) {
+        margin-left: 0;
+    }
+
+    .explain-title {
+        letter-spacing: 2.8px;
+        margin-left: 0;
+    }
+
+    .explain-text {
+        letter-spacing: 0.7px;
+        line-height: 1.1;
+        padding-top: 16px;
+    }
+
+}

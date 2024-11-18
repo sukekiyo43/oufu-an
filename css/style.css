@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*-------------------------------------------
-ページ共通の設定
+各言語ページ共通の設定
 -------------------------------------------*/
 .body-base  {
   font-family: "Shippori Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "游明朝体", "Yu Mincho", serif;
@@ -24,7 +24,7 @@
 
 .nav-wrap.header-nav {
     position: absolute;
-    bottom: 33px;
+    bottom: min(3.67vh,33px);
     left: 0;
     right: 0;
 }
@@ -250,7 +250,9 @@ header
 -------------------------------------------*/
 .header {
     position: relative;
-    height: 900px;
+    height: 100vh;
+    max-height: 900px;
+    min-height: 500px;
     overflow: hidden;
     margin: 0 auto;
 }
@@ -260,14 +262,21 @@ header
     justify-content: space-between;
     max-width: 1864px;
     margin: 0 auto;
-    padding-top: 56px;
+    padding-top: min(6.3vh,56px);
     padding-left: min(3.96vw,76px);
     padding-right: 20px;
 }
 
 .main-title {
-    width: min(19.5vw,200px);
-    min-width: 170px;
+    width: min(19.6vw,200px);
+    height: min(55.5vh,500px);
+    max-height: fit-content;
+    min-height: 277px;
+    aspect-ratio: 200/500;
+}
+
+.main-title img {
+    object-fit: contain;
 }
 
 .menu-button {
@@ -425,14 +434,15 @@ hero-box
 
 .hero-box {
     display: flex;
-    max-width: 1711px;
+    max-width: 1920px;
     margin: 0 auto;
+    padding-inline: 20px;
 }
 
 .hero-head {
     display: flex;
     align-items: center;
-    padding-top: 0.85%;
+    padding: 2.2% 10px 24px 0;
     width: 50%;
 }
 
@@ -440,35 +450,27 @@ hero-box
     position: absolute;
     left: 0;
     right: 0;
-    top: 56px;
+    top: min(6.3vh,56px);
     margin: auto;
     width: min(27.7vw,284px);
-    min-width: 240px;
+    height: min(83.5vh,750px);
+    max-height: fit-content;
+    min-height: 417px;
+    aspect-ratio: 284/750;
 }
 
 .hero-img {
     max-width: 760px;
+    margin: 0 auto;
 }
 
 .hero-explain {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     width: 50%;
-    padding-top: 46px;
-    padding-bottom: 13px;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
     z-index: 10;
-}
-
-.hero-explain-inner {
-    display: flex;
-    flex-direction: column;
-    width: 67%;
-    justify-content: flex-end;
-    max-width: 475px;
 }
 
 .hero-explain::after {
@@ -487,20 +489,14 @@ hero-box
 
 .explain-title {
     font-size: min(3vw,32px);
-    letter-spacing: 10px;
-    margin-left: 18px;
+
 }
 
 .explain-text {
     font-size: min(1.5vw,16px);
-    padding-top: 33px;
-    letter-spacing: 3px;
-    line-height: 2;
 }
 
-.explain-text:nth-of-type(1) {
-    margin-left: 16px;
-}
+
 
 /*-------------------------------------------
 link-box
@@ -881,7 +877,7 @@ header
 -------------------------------------------*/
 
     .header {
-        height: 810px;
+        max-height: 810px;
     }
 
     .header-inner {
@@ -892,8 +888,12 @@ header
     }
 
     .main-title {
-        margin-top: 114px;
-        width: 180px;
+        width: min(46.2vw, 200px);
+        height: min(61.7vh, 500px);
+        min-width: 150px;
+        max-width: 250px;
+        min-height: 300px;
+        margin-top: min(14.1vh,114px);
     }
 
     .menu-box {
@@ -915,9 +915,7 @@ header
     .menu-inner {
         height: 100%;
         max-height: 810px;
-        padding-top: 16px;
-        padding-inline: 16px;
-        padding-bottom: 59px;
+        padding: 16px 16px 59px 16px;
     }
     
     .menu-box.open .menu-inner {
@@ -925,6 +923,9 @@ header
     }
 
     .menu-button {
+        position: sticky;
+        top: 0;
+        right: 0;
         visibility: visible;
         display: flex;
         flex-direction: column;
@@ -984,7 +985,7 @@ header
     .reserve-box {
         opacity: 0;
         visibility: hidden;
-        margin-bottom: 50px;
+        margin-bottom: 48px;
         margin-left: 0;
     }
     
@@ -1011,18 +1012,31 @@ header
     }
 
     .language-buttons {
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
         flex-direction: row;
         width: fit-content;
         padding-left: 0;
-        margin: 163px auto 0;
         gap: 27px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        min-height: 500px;
+        max-height: 800px;
+        padding-bottom: 13px;
+        margin: auto;
         transition: all 0.3s;
     }
-
+    
     .menu-box.open .language-buttons {
-        margin: 0;
+        position: static;
+        height: auto;
+        min-height: 100%;
+        margin-left: 12px;
         flex-direction: column;
-        gap: 15px;
+        gap: 13px;
     }
 
     .language-button {
@@ -1170,18 +1184,13 @@ hero-box
     
     .hero-explain {
         width: 100%;
-        -ms-writing-mode: initial;
-        writing-mode: initial;
-        text-orientation: initial;
         background-size: cover;
         background-position: center;
         background-image: url(../img/hero-bg-sp.jpg);
-        padding: 37px 20px 37px 26px;
+
     }
 
     .hero-explain-inner {
-        width: 100%;
-        max-width: 600px;
         margin: 0 auto;
     }
 
@@ -1191,9 +1200,8 @@ hero-box
 
     .explain-title {
         font-size: 28px;
-        letter-spacing: 2.8px;
         text-align: center;
-        margin-left: 0;
+
     }
 
     .explain-text {
@@ -1201,9 +1209,6 @@ hero-box
         flex-direction: column;
         gap: 15px;
         font-size: 14px;
-        letter-spacing: 0.7px;
-        line-height: 1.1;
-        padding-top: 16px;
     }
 
     .explain-text:nth-of-type(1) {
@@ -1362,7 +1367,5 @@ footer
     .footer-legal {
         margin-top: 0;
     }
-
-
 
 }

@@ -55,13 +55,15 @@ hero-box
 /*-------------------------------------------
 hero-box
 -------------------------------------------*/
+    .hero-head {
+        padding: 0 13px 40px 13px;
+    }
 
     .hero-explain {
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
         text-orientation: mixed;
         white-space: normal;
-        padding: 37px 20px 37px 26px;
     }
 
     .hero-explain-inner {

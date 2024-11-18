@@ -24,10 +24,69 @@ hero-box
     line-height: 1.5;
 }
 
+/*-------------------------------------------
+menu-highlight
+-------------------------------------------*/
+
+.menu-item {
+    display: flex;
+    gap: 8px;
+}
+
+.right-shift {
+    justify-content: space-between;
+}
+
+.left-shift .menu-text-box,
+.right-shift .menu-text-box {
+    width: 50%;
+    max-width: 498px;
+}
+
+.center-shift .menu-text-box {
+    max-width: 690px;
+}
+
+.menu-text:nth-child(n+2) {
+    margin-top: 16px;
+}
+
+.left-shift .menu-img,
+.right-shift .menu-img {
+    width: 50%;
+}
+
+/*-------------------------------------------
+footer
+-------------------------------------------*/
+
+.copyright {
+    letter-spacing: 1.2px;
+}
+
+.policy-link {
+    letter-spacing: 1.4px;
+}
+
+
 @media screen and (max-width: 767px) {
 
 /*-------------------------------------------
-ページ共通の設定
+menu-highlight
 -------------------------------------------*/
+.left-shift .menu-text-box,
+.right-shift .menu-text-box {
+    width: 100%;
+    max-width: 440px;
+}
+
+.center-shift .menu-text-box {
+    max-width: 440px;
+}
+
+.left-shift .menu-img,
+.right-shift .menu-img {
+    width: 100%;
+}
 
 }

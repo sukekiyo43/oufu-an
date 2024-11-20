@@ -72,10 +72,12 @@ a {
   transition: all 0.3s;
 }
 
-a:active,
-a:hover {
-  outline-width: 0;
-  opacity: 0.5;
+@media (any-hover: hover) {
+  a:active,
+  a:hover {
+    outline-width: 0;
+    opacity: 0.5;
+  }
 }
 
 code,

@@ -9,76 +9,44 @@ $(document).ready(function () {
         $('body').removeClass('body-hidden');
     }, 3000);
     
-    // ウィンドウサイズ変更時にも初期化
-    $(window).resize(initializeSlick);
+    // スライダーの初期化
+    initializeSlick();
 
-    function initializeSlick() {
-        if (window.innerWidth >= 768) {
-            if (!$('.slide-items').hasClass('slick-initialized')) {
-                $('.slide-items').slick({
-                    autoplay: true,
-                    autoplaySpeed: 5000,
-                    fade: true,
-                    arrows: false,
-                    speed: 3000
-                });
-            }
-            if ($('.slide-items-sp').hasClass('slick-initialized')) {
-                $('.slide-items-sp').slick('unslick');
-            }
-        } else {
-            if (!$('.slide-items-sp').hasClass('slick-initialized')) {
-                $('.slide-items-sp').slick({
-                    autoplay: true,
-                    autoplaySpeed: 5000,
-                    fade: true,
-                    arrows: false,
-                    speed: 3000
-                });
-            }
-            if ($('.slide-items').hasClass('slick-initialized')) {
-                $('.slide-items').slick('unslick');
-            }
-        }
-    }
-
-    $(document).ready(function () {
     // スクロールで要素をフェードインさせる設定
-        $(".fade, .fade-right, .fade-left").on("inview", function (event, isInView) {
-            if (isInView) {
-                $(this).addClass("fade-in");
-            }
-        });
-
-        $(window).on('scroll', function() {
-            let scrollPosition = $(window).scrollTop();
-            let windowWidth = window.innerWidth;
-
-            if (scrollPosition > 600) {
-                if (windowWidth >= 768) {
-                    $('.top-button').addClass('show-element');
-                    $('.control-box').removeClass('show-element').attr("aria-hidden", "false");
-                } else {
-                    $('.control-box').addClass('show-element').attr("aria-hidden", "false");
-                    $('.top-button').removeClass('show-element');
-                }
-            } else {
-                $('.top-button').removeClass('show-element');
-                $('.control-box').removeClass('show-element').attr("aria-hidden", "true");
-            }
-        });
-
-        $(window).on('resize', function() {
-            let windowWidth = window.innerWidth;
-
-            if (windowWidth >= 768) {
-                $('.button-box').removeClass('show-element');
-            } else {
-                $('.top-button').removeClass('show-element');
-            }
-        });
+    $(".fade, .fade-right, .fade-left").on("inview", function (event, isInView) {
+        if (isInView) {
+            $(this).addClass("fade-in");
+        }
     });
 
+    $(window).on('scroll', function() {
+        let scrollPosition = $(window).scrollTop();
+        let windowWidth = window.innerWidth;
+
+        if (scrollPosition > 600) {
+            if (windowWidth >= 768) {
+                $('.top-button').addClass('show-element');
+                $('.control-box').removeClass('show-element').attr("aria-hidden", "false");
+            } else {
+                $('.control-box').addClass('show-element').attr("aria-hidden", "false");
+                $('.top-button').removeClass('show-element');
+            }
+        } else {
+            $('.top-button').removeClass('show-element');
+            $('.control-box').removeClass('show-element').attr("aria-hidden", "true");
+        }
+    });
+
+    $(window).on('resize', function() {
+        let windowWidth = window.innerWidth;
+
+        if (windowWidth >= 768) {
+            $('.button-box').removeClass('show-element');
+        } else {
+            $('.top-button').removeClass('show-element');
+        }
+    });
+    
     // トップに戻るボタンの設定
     $('.top-button').on('click', function(event) {
         event.preventDefault();
@@ -105,3 +73,17 @@ $(document).ready(function () {
 
     $(window).on('load', checkWidth);
 });
+
+function initializeSlick() {
+    if ($('.slide-items').hasClass('slick-initialized')) {
+        $('.slide-items').slick('unslick');
+    }
+
+    $('.slide-items').slick({
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        arrows: false,
+        speed: 3000
+    });
+}

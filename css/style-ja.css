@@ -33,18 +33,46 @@ hero-box
 
 .explain-title {
     margin-left: 18px;
-    letter-spacing: 10px;
+    letter-spacing: 0.33em;
+
 }
 
 .explain-text {
     padding-top: 33px;
-    letter-spacing: 3px;
+    letter-spacing: 0.1875em;
     line-height: 2;
 }
 
 .explain-text:nth-of-type(1) {
     margin-left: 16px;
 }
+
+/*-------------------------------------------
+menu-highlight
+-------------------------------------------*/
+.menu-item {
+    gap: 2.45%;
+}
+
+.right-shift {
+    justify-content: flex-end;
+    gap: 5.2%;
+}
+
+.left-shift .menu-text-box,
+.right-shift .menu-text-box {
+    width: 44%;
+    max-width: 475px;
+}
+
+.center-shift .menu-text-box {
+    max-width: 791px;
+}
+
+.center-shift .menu-title {
+    margin-top: 22px;
+}
+
 
 /*-------------------------------------------
 スマートフォン
@@ -60,6 +88,7 @@ hero-box
     }
 
     .hero-explain {
+        padding: 37px 20px 37px 26px;
         -ms-writing-mode: horizontal-tb;
         writing-mode: horizontal-tb;
         text-orientation: mixed;
@@ -76,14 +105,32 @@ hero-box
     }
 
     .explain-title {
-        letter-spacing: 2.8px;
+        letter-spacing: 0.1em;
         margin-left: 0;
     }
 
     .explain-text {
-        letter-spacing: 0.7px;
+        letter-spacing: 0.05em;
         line-height: 1.1;
         padding-top: 16px;
+    }
+
+/*-------------------------------------------
+menu-highlight
+-------------------------------------------*/
+
+    .left-shift .menu-text-box,
+    .right-shift .menu-text-box {
+        width: 100%;
+        max-width: 440px;
+    }
+    
+    .center-shift .menu-text-box {
+        max-width: 440px;
+    }
+
+    .center-shift .menu-title {
+        margin-top: 0;
     }
 
 }

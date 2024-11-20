@@ -80,7 +80,8 @@
                             <button class="language-button" onclick="location.href='./index.html'" aria-label="切换到日语">
                                 Japanese
                             </button>
-                            <button class="language-button" onclick="location.href='english'" aria-label="切换到英语">
+                            <button class="language-button" onclick="location.href='./index-en.html'"
+                                aria-label="切换到英语">
                                 English
                             </button>
                         </div>
@@ -91,16 +92,30 @@
 
         <div class="slide-container">
             <div class="slide-items">
-                <div class="slide-item"><img src="./img/mv1.jpg" alt="店铺外观"></div>
-                <div class="slide-item"><img src="./img/mv2.jpg" alt="生鱼片照片。"></div>
-                <div class="slide-item"><img src="./img/mv3.jpg" alt="海鲜拼盘照片"></div>
-                <div class="slide-item"><img src="./img/mv4.jpg" alt="野猪嘴和酒瓶的照片。"></div>
-            </div>
-            <div class="slide-items-sp">
-                <div class="slide-item"><img src="./img/mv1-sp.jpg" alt="店铺外观"></div>
-                <div class="slide-item"><img src="./img/mv2-sp.jpg" alt="生鱼片照片。"></div>
-                <div class="slide-item"><img src="./img/mv3-sp.jpg" alt="海鲜拼盘照片"></div>
-                <div class="slide-item"><img src="./img/mv4-sp.jpg" alt="野猪嘴和酒瓶的照片。"></div>
+                <div class="slide-item">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="./img/mv1-sp.jpg">
+                        <img src="./img/mv1-pc.jpg" alt="店铺外观">
+                    </picture>
+                </div>
+                <div class="slide-item">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="./img/mv2-sp.jpg">
+                        <img src="./img/mv2-pc.jpg" alt="生鱼片照片。">
+                    </picture>
+                </div>
+                <div class="slide-item">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="./img/mv3-sp.jpg">
+                        <img src="./img/mv3-pc.jpg" alt="海鲜拼盘照片">
+                    </picture>
+                </div>
+                <div class="slide-item">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="./img/mv4-sp.jpg">
+                        <img src="./img/mv4-pc.jpg" alt="野猪嘴和酒瓶的照片。">
+                    </picture>
+                </div>
             </div>
         </div>
     </header>

@@ -1,0 +1,225 @@
+@charset "UTF-8";
+/*-------------------------------------------
+英語ページの設定
+-------------------------------------------*/
+/*-------------------------------------------
+英語ページ共通の設定
+-------------------------------------------*/
+/* 予約ボタン */
+
+.reserve-button-inner {
+    padding-right: 21px;
+    letter-spacing: 0.09375em;
+
+}
+
+.vertical .reserve-button-inner {
+    text-orientation: mixed;
+    font-size: 18px;
+    letter-spacing: 0.115em;
+    justify-content: flex-end;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 13px;
+}
+
+.reserve-button.vertical::before {
+    top: 22px;
+    left: 0;
+    right: 2px;
+    bottom: auto;
+}
+
+.reserve-button.vertical::after {
+    top: 22px;
+    left: 0;
+    right: 12px;
+    bottom: auto;
+}
+
+.text-sp {
+    display: none;
+}
+
+/* セクションタイトル */
+.section-title {
+    letter-spacing: 0.11875em;
+    margin: 0 auto 60px;
+}
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+.main-title {
+    width: min(14.6vw,200px);
+}
+
+/*-------------------------------------------
+hero-box
+-------------------------------------------*/
+.hero-text {
+    top: min(32.3vh,291px);
+    width: 52%;
+    max-width: 714px;
+    min-height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.hero-explain {
+    padding-block: min(8.4%,130px);
+    padding-left: 21px;
+    align-items: initial;
+}
+
+.explain-title {
+    font-size: min(3.12vw,32px);
+    letter-spacing: 0.12em;
+}
+
+.explain-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 23px;
+    letter-spacing: 0.1194em;
+    line-height: 1.5;
+    max-width: 745px;
+}
+
+/*-------------------------------------------
+menu-highlight
+-------------------------------------------*/
+
+.center-shift .menu-text-box {
+    max-width: 1045px;
+    padding-left: 10px;
+}
+
+.menu-text {
+    letter-spacing: 0.11875em;
+
+}
+
+.menu-text:nth-child(n+2) {
+    margin-top: 22px;
+}
+
+/*-------------------------------------------
+restaurant-info
+-------------------------------------------*/
+
+.info-header {
+    width: 40%;
+    max-width: 177px;
+}
+
+@media screen and (max-width: 767px) {
+/*-------------------------------------------
+英語ページ共通の設定
+-------------------------------------------*/
+/* 予約ボタン */
+    .reserve-button-inner {
+        font-size: 16px;
+        padding-right: 14px;
+        letter-spacing: 0.03125em;
+    }
+
+    .vertical .reserve-button-inner {
+        font-size: 16px;
+        justify-content: center;
+        padding-right: 14px;
+        padding-bottom: 0;
+        letter-spacing: 0.03125em;
+    }
+
+    .reserve-button.vertical::before {
+        left: auto;
+        right: 45px;
+    }
+
+    .reserve-button.vertical::after {
+        left: auto;
+        right: 40px;
+    }
+
+    .text-sp {
+        display: inline;
+    }
+
+/* セクションタイトル */
+    .section-title {
+        letter-spacing: 0.1071em;
+        margin: 0 auto 30px;
+    }
+
+/*-------------------------------------------
+header
+-------------------------------------------*/
+    .main-title {
+        width: min(46.2vw, 200px);
+    }
+
+/*-------------------------------------------
+main
+-------------------------------------------*/
+    .control-box {
+        gap: min(15.4%,100px);
+    }
+
+/*-------------------------------------------
+hero-box
+-------------------------------------------*/
+
+    .hero-text {
+        width: 100%;
+        padding-top: 22%;
+        margin: 0 auto 11%;
+        height: auto;
+        aspect-ratio: initial;
+    }
+
+    .hero-explain {
+        padding: 37px 26px 23px 26px;
+    }
+
+    .explain-text {
+        letter-spacing: 0.12em;
+        line-height: 1.45;
+    }
+
+    .hero-text img {
+        width: min(90.5vw,557px);
+    }
+
+    .explain-title {
+        font-size: min(7.18vw,32px);
+        letter-spacing: 0.12em;
+        line-height: 1.1;
+    }
+
+/*-------------------------------------------
+menu-highlight
+-------------------------------------------*/
+
+    .menu-text {
+        letter-spacing: 0.12em;
+        line-height: 1.44;
+    }
+
+    .menu-text:nth-child(n+2) {
+        margin-top: 20px;
+    }
+
+    .menu-detail-link {
+        padding-right: 0;
+    }
+
+/*-------------------------------------------
+restaurant-info
+-------------------------------------------*/
+    .title-sp {
+        display: none;
+    }
+
+}

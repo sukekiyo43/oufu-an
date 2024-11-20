@@ -19,6 +19,12 @@ $(document).ready(function () {
         }
     });
 
+    $(".fade-menu").on("inview", function (event, isInView) {
+        if (isInView) {
+            $(".header-nav").addClass("fade-out");
+        } else { $(".header-nav").removeClass("fade-out"); }
+    });
+
     $(window).on('scroll', function() {
         let scrollPosition = $(window).scrollTop();
         let windowWidth = window.innerWidth;

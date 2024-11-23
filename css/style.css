@@ -357,6 +357,19 @@ header
     transition: all 0.3s;
 }
 
+    /* iOSデバイス用  */
+    @supports (-webkit-touch-callout: none) {
+    .language-button::before {
+         left: 21px; 
+        } 
+    } 
+     /* macOSのSafari用  */
+     @supports (-webkit-overflow-scrolling: touch) and (min-resolution: 1dppx) {
+    .language-button::before { 
+        left: 21px;
+        } 
+    } 
+
 @media (any-hover: hover) {
     .language-button:hover::before {
         border-top: solid 1px #FFFFFF;
@@ -479,8 +492,15 @@ hero-box
     min-height: 417px;
 }
 
+.hero-text picture {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 
 .hero-text img {
+    aspect-ratio: 284/750;
+    height: auto;
     max-height: fit-content;
 }
 
@@ -1081,25 +1101,25 @@ header
     }
 
     .language-button {
-        width: 102px;
+        width: 120px;
         height: 52px;
         padding-left: 15px;
     }
 
     .language-button::before {
-        left: 1px;
+        left: 3px;
     }
 
     /* iOSデバイス用  */
     @supports (-webkit-touch-callout: none) {
     .language-button::before {
-         left: -1px; 
+         left: 1px; 
         } 
     } 
      /* macOSのSafari用  */
      @supports (-webkit-overflow-scrolling: touch) and (min-resolution: 1dppx) {
     .language-button::before { 
-        left: -1px;
+        left: 1px;
         } 
     } 
 
@@ -1222,9 +1242,15 @@ hero-box
         max-height: 100%;
         height: auto;
     }
+
+    .hero-text picture {
+        display: block;
+        width: fit-content;
+    }
     
     .hero-text img {
         width: min(29.2vw,180px);
+        aspect-ratio: initial;
     }
     
     .hero-explain {

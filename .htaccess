@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "User Authentication"
+AuthUserFile "/home/kitarou13/pub/portfolio/box/oufu-an/.htpasswd"
+require valid-user

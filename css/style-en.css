@@ -37,6 +37,21 @@
     bottom: auto;
 }
 
+/* iOSデバイス用  */
+@supports (-webkit-touch-callout: none) {
+.reserve-button.vertical::before,  
+.reserve-button.vertical::after  {
+        top: 17px; 
+    } 
+} 
+    /* macOSのSafari用  */
+    @supports (-webkit-overflow-scrolling: touch) and (min-resolution: 1dppx) {
+    .reserve-button.vertical::before,  
+.reserve-button.vertical::after  { 
+    top: 17px;
+    } 
+} 
+
 .text-sp {
     display: none;
 }
@@ -64,6 +79,10 @@ hero-box
     min-height: auto;
     padding-top: 0;
     padding-bottom: 0;
+}
+
+.hero-text img {
+    aspect-ratio: initial;
 }
 
 .hero-explain {
@@ -142,6 +161,21 @@ restaurant-info
         left: auto;
         right: 40px;
     }
+
+    /* iOSデバイス用  */
+    @supports (-webkit-touch-callout: none) {
+    .reserve-button.vertical::before,  
+    .reserve-button.vertical::after  {
+            top: 22px; 
+        } 
+    } 
+        /* macOSのSafari用  */
+        @supports (-webkit-overflow-scrolling: touch) and (min-resolution: 1dppx) {
+        .reserve-button.vertical::before,  
+    .reserve-button.vertical::after  { 
+            top: 22px;
+        } 
+    } 
 
     .text-sp {
         display: inline;
